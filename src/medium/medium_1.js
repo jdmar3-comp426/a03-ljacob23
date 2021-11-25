@@ -62,10 +62,26 @@ export function getMedian(array) {
   standard_deviation: 1.632993161855452
  }
  */
+//console.log(getStatistics([3,2,4,5,5,5,2,6,7]))
 export function getStatistics(array) {
+    array.sort(function (x, y) {return x - y;});
     let min = array[0];
-    let max = array[0];
+    let max = array[array.length-1];
     let median = getMedian(array);
+    let mean = 0;
+    for(let i = 0; i < array.length; i++){
+        mean += array[i];
+    }
+    mean = mean /array.length;
+    let variance =0;
+    let med = getMedian(array);
+    for(let i = 0; i < array.length; i++){
+        variance += (array[i] - mean) * (array[i] - mean);
+    }
+    variance = variance / array.length;
+    let standard_dev = Math.sqrt(variance);
+    
+    return("length:" + array.length + "\n" + "sum:" + getSum(array) + "\n" + "mean:" + mean + "\n" + "median:" + getMedian(array) + "\n" + "min:" + min + "\n" + "max:" + max + "\n" + "variance:" + variance + "\n" + "standard deviation:" + standard_dev);
     
 }
 
