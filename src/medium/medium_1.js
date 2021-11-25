@@ -16,23 +16,25 @@ export function getSum(array) {
 }
 
 
-/**
- * Calculates the median of an array of numbers.
- * @param {number[]} array
- * @returns {number|*}
- *
- * example:
- * let array = [3,2,5,6,2,7,4,2,7,5];
- * console.log(getMedian(array)); // 4.5
- */
+
+//  * Calculates the median of an array of numbers.
+//   @param {number[]} array
+//   @returns {number|*}
+ 
+//   example:
+ let array = [3,2,5,6,2,7,4,2,7];
+  console.log(getMedian(array)); // 4.5
+
 export function getMedian(array) {
     array.sort();
     // if the length is ten, take the between of array[4] and array[5]
-    //so if its even I need to take the 
+    //if its 9, the floor of the length/2
     let answer = 0;
     if(array.length % 2 == 0){
         answer = array[array.length / 2] + array[array.length/2 -1];
         answer = answer/2;
+    } else {
+        answer = array[Math.floor(array.length / 2)];
     }
     return answer;
 }
