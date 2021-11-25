@@ -8,8 +8,13 @@
  * returns: '3 + 4 = 7'
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
  */
+// console.log(sumToString(1,2))
 export function sumToString(a, b) {
-
+    let first = a;
+    let second = b;
+    let answer = a +b;
+    let str_answer = a + " + " + b + " = " + answer;
+    return str_answer;
 }
 
 
