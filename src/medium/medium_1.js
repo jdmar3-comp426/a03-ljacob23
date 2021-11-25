@@ -23,8 +23,8 @@ export function getSum(array) {
  
 //   example:
  //let array = [2,3,1,4,5,6];
- let array = [1,2,3,4,5,6,7,8,9,10,12,11]
-  console.log(getMedian(array)); // 4.5
+ //let array = [1,2,3,4,5,6,7,8,9,10,12,11]
+  //console.log(getMedian(array)); // 4.5
 
 export function getMedian(array) {
     array.sort(function (x, y) {return x - y;});
