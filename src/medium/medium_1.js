@@ -33,10 +33,11 @@ export function getMedian(array) {
     if(array.length % 2 == 0){
         answer = array[array.length / 2] + array[array.length/2 -1];
         answer = answer/2;
-    // } else {
-    //     answer = array[Math.floor(array.length / 2)];
-    // }
+    } else {
+        answer = array[Math.floor(array.length / 2)];
     }
+    
+    
     return answer;
 }
 
