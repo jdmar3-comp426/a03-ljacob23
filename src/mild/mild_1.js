@@ -28,7 +28,7 @@ export function sumToString(a, b) {
  * returns: [ 3, 4, 5, 6, 7 ]
  *
  */
-console.log(getIncreasingArray(3,7))
+//console.log(getIncreasingArray(3,7))
 export function getIncreasingArray(startNumber, endNumber) {
     let counter = endNumber-startNumber-1;
     let answer = new Array(counter +1); 
