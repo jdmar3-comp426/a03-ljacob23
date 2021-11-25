@@ -28,7 +28,7 @@ export function getSum(array) {
 
 export function getMedian(array) {
     array.sort(function (x, y) {return x - y;});
-    console.log(array)
+    //console.log(array)
     // if the length is ten, take the between of array[4] and array[5]
     //if its 9, the floor of the length/2
     let answer = 0;
