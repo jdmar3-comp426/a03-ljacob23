@@ -22,16 +22,18 @@ export function getSum(array) {
 //   @returns {number|*}
  
 //   example:
- //let array = [1,2,3,4,5,6,7,8,9];
-  //console.log(getMedian(array)); // 4.5
+ //let array = [2,3,1,4,5,6];
+ let array = [1,2,3,4,5,6,7,8,9,10,12,11]
+  console.log(getMedian(array)); // 4.5
 
 export function getMedian(array) {
-    array.sort();
+    array.sort(function (x, y) {return x - y;});
+    console.log(array)
     // if the length is ten, take the between of array[4] and array[5]
     //if its 9, the floor of the length/2
     let answer = 0;
     if(array.length % 2 == 0){
-        answer = array[array.length / 2] + array[array.length/2 -1];
+        answer = array[array.length / 2] + array[(array.length/2)-1];
         answer = answer/2;
     } else {
         answer = array[Math.floor(array.length / 2)];
