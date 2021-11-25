@@ -48,10 +48,19 @@ export function getIncreasingArray(startNumber, endNumber) {
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  * and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
-//console.log(maxAndMin([1,2,3,4,5,9, 12, 3, 8]))
+console.log(maxAndMin([1,2,3,4,5,9, 12, 3, 8]))
 export function maxAndMin(numbers) {
-    numbers.sort(function (x, y) {return x - y;});
-    return("min: " + numbers[0] + ", " + "max: " + numbers[numbers.length -1])
+    let min = numbers[0];
+    let max = numbers[0];
+    for(let i = 0; i < numbers.length; i++){
+        if(numbers[i] < min){
+            min = numbers[i];
+        }
+        if(numbers[i] > max){
+            max = numbers[i];
+        }
+    }
+    return("min: " + min + ", " + "max: " + max)
 }
 
 /**
