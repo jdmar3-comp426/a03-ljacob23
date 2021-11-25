@@ -26,7 +26,14 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
-    let answer = console.log(getMedian(array));
+    array.sort();
+    // if the length is ten, take the between of array[4] and array[5]
+    //so if its even I need to take the 
+    let answer = 0;
+    if(array.length % 2 == 0){
+        answer = array[array.length / 2] + array[array.length/2 -1];
+        answer = answer/2;
+    }
     return answer;
 }
 
