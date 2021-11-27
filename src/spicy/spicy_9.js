@@ -46,6 +46,7 @@ export const repeat = (fn, n, ...params) => {
  *   parameter "num2". The returned function should calculate and return the
  *   product of num1 and num2.
  */
+
 export const multiplyBy = (num1) => (num2) => {
     return num1*num2;
 };
@@ -55,7 +56,9 @@ export const multiplyBy = (num1) => (num2) => {
  * Use the multiplyBy function to create and export a function named
  *   "tenTimes" that multiplies a number by 10.
  */
-export const tenTimes = undefined;
+export const tenTimes = (num1) =>{
+    return num1 *10;
+}
 
 
 /**
