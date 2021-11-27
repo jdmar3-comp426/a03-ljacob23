@@ -82,7 +82,7 @@ export function getStatistics(array) {
     let standard_dev = Math.sqrt(variance);
     
     return("length: " + array.length + " "+ "sum: " + getSum(array) + "mean: " + mean +  "median: " + getMedian(array) +  "min: " + min +  "max: " + max +  "variance: " + variance +  "standard deviation: " + standard_dev);
-    //return("length: " + array.length + "\n" + "sum: " + getSum(array) + "\n" + "mean: " + mean + "\n" + "median: " + getMedian(array) + "\n" + "min: " + min + "\n" + "max: " + max + "\n" + "variance: " + variance + "\n" + "standard deviation: " + standard_dev);
+
     
 }
 
