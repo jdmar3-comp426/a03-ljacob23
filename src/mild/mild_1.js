@@ -23,6 +23,7 @@ export function sumToString(a, b) {
  * @param {number} startNumber
  * @param {number} endNumber
  * @returns {number[]}
+ * 
  *
  * example: getIncreasingArray(3, 7)
  * returns: [ 3, 4, 5, 6, 7 ]
