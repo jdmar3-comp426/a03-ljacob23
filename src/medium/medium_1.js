@@ -80,8 +80,16 @@ export function getStatistics(array) {
     }
     variance = variance / array.length;
     let standard_dev = Math.sqrt(variance);
-    
-    return("length: " + array.length + " "+ "sum: " + getSum(array) + "mean: " + mean +  "median: " + getMedian(array) +  "min: " + min +  "max: " + max +  "variance: " + variance +  "standard deviation: " + standard_dev);
+    return {
+        length: array.length,
+        sum: getSum(array),
+        mean: mean,
+        median: getMedian(array),
+        min: min,
+        max: max,
+        variance: variance,
+        standard_deviation: standard_dev
+    };
 
     
 }
