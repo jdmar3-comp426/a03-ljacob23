@@ -20,7 +20,7 @@ export const repeat = (fn, n, ...params) => {
         answer[i] = fn(params);
     }
     
-    let st_ans = "";
+    let st_ans = " ";
     for(let i =0; i < n; i++){
         st_ans+= answer[i];
     }
