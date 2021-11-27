@@ -75,5 +75,5 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-
+    
 }
