@@ -80,7 +80,7 @@ export function countArray(array) {
         if(array[i] in answer == false){
             answer[array[i]] = 1;
         } else {
-            dict[array[i]]++;
+            answer[array[i]]++;
         }
     }
     return answer;
