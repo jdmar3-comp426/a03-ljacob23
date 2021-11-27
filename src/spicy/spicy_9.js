@@ -20,11 +20,12 @@ export const repeat = (fn, n, ...params) => {
         answer[i] = fn(...params);
     }
     
-    let st_ans = "" + answer[i];
-    for(let i =1; i < n; i++){
-        st_ans+= answer[i];
-    }
-    return st_ans;
+    // let st_ans = "" + answer[0];
+    // for(let i =1; i < n; i++){
+    //     st_ans+= answer[i];
+    // }
+    // return st_ans;
+    return answer;
 };
 
 
