@@ -20,11 +20,6 @@ export const repeat = (fn, n, ...params) => {
         answer[i] = fn(...params);
     }
     
-    // let st_ans = "" + answer[0];
-    // for(let i =1; i < n; i++){
-    //     st_ans+= answer[i];
-    // }
-    // return st_ans;
     return answer;
 };
 
@@ -33,11 +28,11 @@ export const repeat = (fn, n, ...params) => {
  * Use the repeat function to log the string "Hello, world!" to the console
  *   10 times.
  */
-export const repeatDemo = () => {
-    let answer = repeat((s => console.log(s), 10, "Hello, world!"));
-    return answer; 
+ 
+ export const repeatDemo = () => {
+    repeat((s) => console.log(s), 10, "Hello, world!");
 };
-
+console.log(repeatDemo());
 
 /**************************************************************************
  *
