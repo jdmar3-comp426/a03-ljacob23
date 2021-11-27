@@ -75,5 +75,13 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-    
+    var answer = {};
+    for(let i = 0; i< array.length; i++){
+        if(array[i] in answer == false){
+            answer[array[i]] = 1;
+        } else {
+            dict[array[i]]++;
+        }
+    }
+    return answer;
 }

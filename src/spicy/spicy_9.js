@@ -158,7 +158,7 @@ export const filter = (arr, test) => {
     let fail_count = 0;
     let pass = new Array;
     let pass_count = 0;
-    for(let i = 1; i < arr.length; i++){
+    for(let i = 0; i < arr.length; i++){
         if(!test(arr[i])){
             fail[fail_count] = arr[i];
             fail_count++;
