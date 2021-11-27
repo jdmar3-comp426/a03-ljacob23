@@ -155,11 +155,11 @@ export const someEven = (arr, test) => {
  */
 export const filter = (arr, test) => {
     for(let i = 1; i < arr.length; i=i+2){
-        if(test(arr[i])){
-            return true;
+        if(!test(arr[i])){
+            return false;
         }
     }
-    return false;
+    return true;
 };
 
 
@@ -190,5 +190,14 @@ export const anEvenIsOdd = (arr) => {
  *   pass the test. You must use the filter function.
  */
 export const hasExactly = (arr, test, n) => {
-
+    let count = 0;
+    for(let i =0; i < arr.length; i++){
+        if(test(arr[i])){
+            count++;
+        }
+    }
+    if(count == n){
+        return true;
+    }
+    return false;
 };
