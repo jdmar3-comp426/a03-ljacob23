@@ -17,11 +17,11 @@
 export const repeat = (fn, n, ...params) => {
     const answer = [];
     for(let i = 0; i < n; i++){
-        answer[i] = fn(params);
+        answer[i] = fn(...params);
     }
     
-    let st_ans = " ";
-    for(let i =0; i < n; i++){
+    let st_ans = "" + answer[i];
+    for(let i =1; i < n; i++){
         st_ans+= answer[i];
     }
     return st_ans;
