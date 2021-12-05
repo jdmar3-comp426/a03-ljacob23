@@ -63,13 +63,7 @@ export function searchMpg(car_data, minCity, minHighway) {
  * @returns {[]} array of cars
  */
 export function searchName(car_data, searchTerm) {
-    let answer = new Array();
-    for(let i = 0; i < car_data.length; i++){
-        if(car_data[i].id.includes(searchTerm) == true){
-            answer[i] = car_data[i];
-        }
-    }
-    return answer;
+    
     
 }
 
@@ -84,15 +78,10 @@ export function searchName(car_data, searchTerm) {
  */
 export function searchByYear(car_data, years) {
     let answer = new Array();
-    let year = years.sort();
-    
-    for(let i of years){
-        for(let k = 0; k < car_data.length; k++){
-            if(car_data[i].year == i){
-                answer.push(car_data[i]);
-            }
+    for(let i = 0; i < car_data.length; i++){
+        if(car_data[i].year == years){
+            answer[i] = car_data[i]
         }
-       
     }
     return answer;
 
