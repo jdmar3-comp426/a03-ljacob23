@@ -29,7 +29,11 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
-
+   let answer = new Array();
+   for(let i = 0; i < array.length; i++){
+      answer[i] = identifyVariable(array[i]);
+   }
+   return answer;
 }
 
 /**
@@ -49,6 +53,7 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
+   delete object[key];
    
 }
 
