@@ -8,6 +8,24 @@ see under the methods section
 */
 
 
+let highway = new Array();
+let city = new Array();
+for(let i = 0; i < mpg_data.length; i++){
+    highway[i] = mpg_data[i].highway_mpg
+    city[i] = mpg_data[i].city_mpg
+}
+let highway_mean = getStatistics(highway).mean
+let city = getStatistics(city).mean
+let year_ = new Array()
+for(let i = 0; i < mpg_data.length; i++){
+    year_[i] = mpg_data[i].year
+}
+
+h_year = 0
+for(let i = 0; i < mpg_data.length; i++){
+    if(mpg_data[i],hybrid)
+    h_year = h_year + 1
+}
 /**
  * This object contains data that has to do with every car in the `mpg_data` object.
  *
@@ -21,9 +39,9 @@ see under the methods section
  */
 export const allCarStats = {
     
-    avgMpg: undefined,
-    allYearStats: undefined,
-    ratioHybrids: undefined,
+    avgMpg: {city, highway},
+    allYearStats: getStatistics(h_year),
+    ratioHybrids: h_year/mpg_data.length,
     
    
 };
