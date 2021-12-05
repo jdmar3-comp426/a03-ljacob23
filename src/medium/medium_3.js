@@ -44,7 +44,13 @@ return holder;
  *
  */
 export function searchMpg(car_data, minCity, minHighway) {
-
+    let answer = new Array();
+    for(let i = 0; i < car_data.length; i++){
+        if(car_data[i].city_mpg >= minCity && car_data[i].highway_mpg >= minHighway){
+            answer.push(car_data[i]);
+        }
+    }
+    return answer;
 }
 
 
@@ -57,6 +63,13 @@ export function searchMpg(car_data, minCity, minHighway) {
  * @returns {[]} array of cars
  */
 export function searchName(car_data, searchTerm) {
+    let answer = new Array();
+    for(let i = 0; i < car_data.length; i++){
+        if(car_data[i].id.includes(searchTerm) == true){
+            answer[i] = car_data[i];
+        }
+    }
+    return answer;
     
 }
 
@@ -70,5 +83,12 @@ export function searchName(car_data, searchTerm) {
  * @returns {[]} an array of car objects
  */
 export function searchByYear(car_data, years) {
+    let answer = new Array();
+    for(let i = 0; i < car_data.length; i++){
+        if(car_data[i].year == years){
+            answer[i] = car_data[i]
+        }
+    }
+    return answer;
 
 }
