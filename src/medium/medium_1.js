@@ -8,21 +8,39 @@ import {variance} from "./data/stats_helpers.js";
  * prototype functions. Very useful
  */
 export function getSum(array) {
-
+    let answer = 0;
+    for(let i = 0; i < array.length; i++){
+        answer += array[i];
+    }
+    return answer;
 }
 
 
-/**
- * Calculates the median of an array of numbers.
- * @param {number[]} array
- * @returns {number|*}
- *
- * example:
- * let array = [3,2,5,6,2,7,4,2,7,5];
- * console.log(getMedian(array)); // 4.5
- */
-export function getMedian(array) {
 
+//  * Calculates the median of an array of numbers.
+//   @param {number[]} array
+//   @returns {number|*}
+ 
+//   example:
+ //let array = [2,3,1,4,5,6];
+ //let array = [1,2,3,4,5,6,7,8,9,10,12,11]
+  //console.log(getMedian(array)); // 4.5
+
+export function getMedian(array) {
+    array.sort(function (x, y) {return x - y;});
+    //console.log(array)
+    // if the length is ten, take the between of array[4] and array[5]
+    //if its 9, the floor of the length/2
+    let answer = 0;
+    if(array.length % 2 == 0){
+        answer = array[array.length / 2] + array[(array.length/2)-1];
+        answer = answer/2;
+    } else {
+        answer = array[Math.floor(array.length / 2)];
+    }
+    
+
+    return answer;
 }
 
 /**
@@ -44,7 +62,35 @@ export function getMedian(array) {
   standard_deviation: 1.632993161855452
  }
  */
+//console.log(getStatistics([3,2,4,5,5,5,2,6,7]))
 export function getStatistics(array) {
+    array.sort(function (x, y) {return x - y;});
+    let min = array[0];
+    let max = array[array.length-1];
+    let median = getMedian(array);
+    let mean = 0;
+    for(let i = 0; i < array.length; i++){
+        mean += array[i];
+    }
+    mean = mean /array.length;
+    let variance =0;
+    let med = getMedian(array);
+    for(let i = 0; i < array.length; i++){
+        variance += (array[i] - mean) * (array[i] - mean);
+    }
+    variance = variance / array.length;
+    let standard_dev = Math.sqrt(variance);
+    return {
+        length: array.length,
+        sum: getSum(array),
+        mean: mean,
+        median: getMedian(array),
+        min: min,
+        max: max,
+        variance: variance,
+        standard_deviation: standard_dev
+    };
 
+    
 }
 

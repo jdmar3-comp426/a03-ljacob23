@@ -8,8 +8,13 @@
  * returns: '3 + 4 = 7'
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
  */
+// console.log(sumToString(1,2))
 export function sumToString(a, b) {
-
+    let first = a;
+    let second = b;
+    let answer = a +b;
+    let str_answer = a + " + " + b + " = " + answer;
+    return str_answer;
 }
 
 
@@ -18,13 +23,23 @@ export function sumToString(a, b) {
  * @param {number} startNumber
  * @param {number} endNumber
  * @returns {number[]}
+ * 
  *
  * example: getIncreasingArray(3, 7)
  * returns: [ 3, 4, 5, 6, 7 ]
  *
  */
+//console.log(getIncreasingArray(3,7))
 export function getIncreasingArray(startNumber, endNumber) {
-
+    let counter = endNumber-startNumber-1;
+    let answer = new Array(counter +1); 
+    answer[0] = startNumber;
+    answer[answer.length] = endNumber;
+    for(let i = 1; i <= counter; i++){
+        answer[i] = startNumber+i;
+    }
+    
+    return answer;
 }
 
 /**
@@ -34,8 +49,19 @@ export function getIncreasingArray(startNumber, endNumber) {
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  * and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
+//console.log(maxAndMin([1,2,3,4,5,9, 12, 3, 8]))
 export function maxAndMin(numbers) {
-
+    let min = numbers[0];
+    let max = numbers[0];
+    for(let i = 0; i < numbers.length; i++){
+        if(numbers[i] < min){
+            min = numbers[i];
+        }
+        if(numbers[i] > max){
+            max = numbers[i];
+        }
+    }
+    return("{ " + "max: " + max + ", " + "min: " + min + " }")
 }
 
 /**
@@ -49,5 +75,13 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-
+    var answer = {};
+    for(let i = 0; i< array.length; i++){
+        if(array[i] in answer == false){
+            answer[array[i]] = 1;
+        } else {
+            answer[array[i]]++;
+        }
+    }
+    return answer;
 }
